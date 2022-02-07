@@ -1,19 +1,32 @@
-import react from "react";
+import { react , useEffect, useState } from "react";
 import ItemCount from './ItemCount';
-
+import { getItems } from "./Productos"
+import ItemList from "./ListItems"
 
 function onAddItem(itemCount){
     console.log(itemCount)
 }
 
 
-function itemListContainer ({greetings}){
+
+const ItemListContainer = ({greetings}) => {
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        getItems.then((res) => {
+           setItems(res)});
+    }, []);
+    
+    
     return <>
         <div>
         <h2>Listado de productos</h2>
         <p>{greetings}</p>
 
-        <ItemCount stock={8} initial={0} onAdd={onAddItem}/>
+        <ItemList items={items}/>
+
+        {/* <ItemCount stock={8} initial={0} onAdd={onAddItem}/> */}
 
         </div>
 
@@ -21,4 +34,4 @@ function itemListContainer ({greetings}){
     </>
 }
 
-export default itemListContainer
+export default ItemListContainer

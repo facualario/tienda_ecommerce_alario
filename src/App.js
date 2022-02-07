@@ -15,8 +15,7 @@ function App() {
       <NavBar/>
 
       <div>
-        <ItemListContainer greetings="Gracias por visitar la página,
-        los productos estarán disponibles proximamente" />
+        <ItemListContainer/>
       </div>
 
       
