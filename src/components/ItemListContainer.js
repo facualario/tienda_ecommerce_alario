@@ -2,6 +2,7 @@ import { react , useEffect, useState } from "react";
 import ItemCount from './ItemCount';
 import { getItems } from "./Productos"
 import ItemList from "./ListItems"
+import ItemDetailContainer from "./ItemDetailContainer";
 
 function onAddItem(itemCount){
     console.log(itemCount)
@@ -25,6 +26,8 @@ const ItemListContainer = ({greetings}) => {
         <p>{greetings}</p>
 
         <ItemList items={items}/>
+
+        <ItemDetailContainer />
 
         {/* <ItemCount stock={8} initial={0} onAdd={onAddItem}/> */}
 
