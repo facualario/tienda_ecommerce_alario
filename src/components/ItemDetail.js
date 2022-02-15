@@ -4,7 +4,7 @@ const Detail = ({item}) => {
     console.log(item)
     return(
         <div className="parent" >
-            <div className="div1"><img className="detail" src={item.img}/></div>
+            <div className="div1"><img className="detail" src={item.imagen}/></div>
             <div className="div2">
                 <br></br>
                 <h1> {item.nombre}</h1>

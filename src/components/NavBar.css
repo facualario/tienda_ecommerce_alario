@@ -55,3 +55,7 @@ button:hover{
 .carrito{
     padding: 0.71em 1em;
 }
+
+li a.active{
+    font-weight: 800;       
+}

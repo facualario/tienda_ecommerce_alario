@@ -3,6 +3,7 @@ import ItemCount from './ItemCount';
 import { getItems } from "./Productos"
 import ItemList from "./ListItems"
 import ItemDetailContainer from "./ItemDetailContainer";
+import { useParams } from "react-router-dom";
 
 function onAddItem(itemCount){
     console.log(itemCount)
@@ -13,6 +14,18 @@ function onAddItem(itemCount){
 const ItemListContainer = ({greetings}) => {
 
     const [items, setItems] = useState([]);
+    const {categoryName} = useParams();
+
+   
+
+    useEffect(() => {
+        getItems.then((items) => {
+
+            const productosCategoria =items.filter((producto) => {
+                return producto.category === categoryName
+            })
+           setItems(productosCategoria)});
+    }, [categoryName]);
 
     useEffect(() => {
         getItems.then((res) => {
@@ -27,8 +40,7 @@ const ItemListContainer = ({greetings}) => {
 
         <ItemList items={items}/>
 
-        <ItemDetailContainer />
-
+        
         {/* <ItemCount stock={8} initial={0} onAdd={onAddItem}/> */}
 
         </div>
