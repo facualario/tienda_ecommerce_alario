@@ -20,19 +20,16 @@ export default function ItemCount ({stock, initial, onAdd}){
         }
     }
 
-    // function addToCart(){
-    //     onAdd(contador)
-    // }
-
-    function addToCart (){
-        console.log(`Se agregaron ${contador} productos al carrito`)
+    function addToCart(){
+        onAdd(contador)
     }
 
+    
 
     return <>
     
     <div>
-        <h3>Nombre de Producto </h3>
+        <br></br>
         <p>En stock {stock} unidades</p>
         <p>{contador}</p>
         <button onClick={restar} >-</button>
