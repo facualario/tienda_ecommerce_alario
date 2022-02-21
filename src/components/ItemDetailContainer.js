@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
             const item =items.find((i) => i.id === Number(itemId));
             setItem(item);
         }).catch((error) => {
-            console.log(error)
+            // console.log(error)
         })
     }, [itemId]);
     

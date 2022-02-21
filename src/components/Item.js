@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const Item = ({item}) => {
-    console.log(item)
+    // console.log(item)
     return(
         <div style={{border:"5px solid black" , padding:"0.5rem 0.5rem"}}>
             <Link to={`/producto/${item.id}`}>

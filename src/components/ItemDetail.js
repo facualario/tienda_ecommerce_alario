@@ -1,18 +1,26 @@
 import ItemDetail from "./ItemDetail.css"
 import ItemCount from "./ItemCount"
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import {CartContext} from "../context/CartContext"
 
 const Detail = ({item}) => {
-    console.log(item)
+    // console.log(item)
 
-    const [ itemCount, setItemCount ]= useState()
-    
+    const [ itemCount, setItemCount ]= useState();
+    const {addToCart, cart} = useContext (CartContext)
+
+
     function onAddItem(newItemCount){
-        console.log(newItemCount)
-        setItemCount(newItemCount)
+        // console.log(newItemCount)
+        setItemCount(newItemCount);
+        addToCart(newItemCount, item);
 
+       
     }
+    console.log(cart)
+
+
     return(
         <div className="parent" >
             <div className="div1"><img className="detail" src={`./.${item.imagen}`} /></div>

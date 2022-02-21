@@ -6,7 +6,7 @@ import ItemDetailContainer from "./ItemDetailContainer";
 import { useParams } from "react-router-dom";
 
 function onAddItem(itemCount){
-    console.log(itemCount)
+    // console.log(itemCount)
 }
 
 
