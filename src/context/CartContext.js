@@ -16,7 +16,7 @@ const CartContextProvider = ({ children }) => {
         }
     };
 
-    console.log("el carrito es", cart)
+    
 
     const isOnCart = (id) => {
         const respuesta = cart.some((prod)=> prod.id===id);

@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom"
 
 
 
-const Cart = () =>{
+const Cart = 
+    () => {
     const {cart, vaciarCarrito, deleteItem} = useContext(CartContext);
 
     return (
@@ -24,6 +25,7 @@ const Cart = () =>{
                          <button onClick={() => deleteItem(producto.id)}>X</button>
                      </div>
                  ))}
+                 console.log(cart)
                  <button onClick={vaciarCarrito}> Vaciar Carrito</button>
                  </>
             )}
