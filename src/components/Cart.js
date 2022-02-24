@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 
 const Cart = 
-    () => {
+    memo(() => {
     const {cart, vaciarCarrito, deleteItem} = useContext(CartContext);
 
     return (
@@ -25,12 +25,12 @@ const Cart =
                          <button onClick={() => deleteItem(producto.id)}>X</button>
                      </div>
                  ))}
-                 console.log(cart)
+                 
                  <button onClick={vaciarCarrito}> Vaciar Carrito</button>
                  </>
             )}
         </>
     )
-}
+}, (oldProp , newProp) => oldProp.cart.lenght === newProp.cart.lenght )
 
 export default Cart
