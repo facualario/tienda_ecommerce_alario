@@ -16,19 +16,24 @@ const Cart =
                     <h2>Aún no hay productos, volve al Home</h2>
                     <Link to="./">Home</Link>
                 </>
-            ):(
+            ) : (
                  <>
                  {cart.map((producto) =>(
-                     <div key={producto.id}>
-                         <h3>{producto.nombre}</h3>
-                         <h3>{producto.cantidad}</h3>
-                         <button onClick={() => deleteItem(producto.id)}>X</button>
-                     </div>
-                 ))}
-                 
-                 <button onClick={vaciarCarrito}> Vaciar Carrito</button>
-                 </>
-            )}
+                     <div >
+                         <div key={producto.id}>
+                            <h3>{producto.nombre}</h3>
+                            <h3>Cantidad : {producto.cantidad} x ${producto.precio}</h3>
+                            <h2>Total = </h2>
+                            <button onClick={() => deleteItem(producto.id)}>Eliminar Producto</button>
+                        </div>
+                        <button onClick={vaciarCarrito}> Vaciar Carrito</button>
+
+                        <button>Finalizar compra</button>
+                    </div>
+                ))}
+
+                 </>)
+            }
         </>
     )
 }, (oldProp , newProp) => oldProp.cart.lenght === newProp.cart.lenght )
