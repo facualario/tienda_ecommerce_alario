@@ -5,6 +5,7 @@ import ItemList from "./ListItems"
 import ItemDetailContainer from "./ItemDetailContainer";
 import { useParams } from "react-router-dom";
 
+
 function onAddItem(itemCount){
     // console.log(itemCount)
 }
@@ -31,6 +32,7 @@ const ItemListContainer = ({greetings}) => {
         getItems.then((res) => {
            setItems(res)});
     }, []);
+    
     
     
     return <>
