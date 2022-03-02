@@ -1,13 +1,17 @@
-import react from "react";
+import React, { useContext } from "react";
 import imgSrc from "./cart.png"
+import { CartContext } from "../context/CartContext";
 
 
-function cartWidget (){
+
+
+function CartWidget (){
+    const {cart} = useContext(CartContext)
     return <>
 
-    <li><button className="carrito"><img src={imgSrc} alt=""/></button></li>
+    <li><button className="carrito"><img src={imgSrc} alt=""/> {cart.length} </button></li>
 
     </>
 }
 
-export default cartWidget
+export default CartWidget

@@ -21,7 +21,7 @@ function navBar () {
                 <ul>          
                     <li><button><NavLink to="/category/platos">Platos</NavLink> </button></li>
                     <li><button> <NavLink to="/category/accesorios">Accesorios</NavLink></button></li>
-                    <CartWidget/>
+                    <NavLink to="/cart"><CartWidget/></NavLink>
                     <li><button className="login">Log in</button></li>
 
                 </ul>
