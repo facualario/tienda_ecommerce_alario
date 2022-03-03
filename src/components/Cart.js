@@ -1,6 +1,6 @@
 import React, { memo, useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { Link } from "react-router-dom"
+import {  NavLink, Link } from "react-router-dom"
 
 
 
@@ -12,12 +12,14 @@ const Cart =
     return (
         
         <>
-            {cart.cantidad === 0? (
+            {cart.length === 0? (
                 <>
                     <h2>Aún no hay productos, volve al Home</h2>
-                    <Link to="./">Home</Link>
-                    
+                    <NavLink to="/"> <button>Home</button></NavLink>
                 </>
+
+
+                
             ) : (
                  <>
                  {cart.map((producto) =>(
@@ -34,7 +36,7 @@ const Cart =
                     
                 )) }
                 <button onClick={vaciarCarrito}> Vaciar Carrito</button>
-                <button>Finalizar compra</button>
+                <NavLink to="/order"><button>Finalizar compra</button></NavLink>
 
                  </>)
                  
