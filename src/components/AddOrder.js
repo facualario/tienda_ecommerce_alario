@@ -1,6 +1,11 @@
 import react, { useState } from "react";
 import './AddOrder.css';
 import { NavLink } from "react-router-dom";
+import { database } from "../firebase";
+
+import {collection, addDoc} from "firebase/firestore"
+
+
 
 const AddOrder=() =>{
     const [nombre, setNombre] = useState("")
@@ -15,8 +20,30 @@ const AddOrder=() =>{
 
     const onSubmit = (event) => {
         event.preventDefault()
-    }
 
+        if (![nombre, mail, direccion, precio].some(field => field ==="")){
+
+            // Obtengo la referencial
+            const addNewOrder = collection(database, "orders")
+            const newOrder = {
+                buyer: nombre,
+                mailDirection: mail,
+                direction: direccion,
+                total: precio,
+            }
+
+           addDoc(addNewOrder, newOrder)
+            .then(doc => {
+                  console. log("Se guardo el documento correctamente", doc.id)
+            })
+            .catch(error => {
+                 console.log(error)
+            })}
+            else{
+
+            console.log("no hay nada")
+            }
+        }
     return(
         
 
@@ -43,7 +70,7 @@ const AddOrder=() =>{
                 <input value={precio} onChange={handlePrecioChange} type="number"/>
             </div>
 
-            <NavLink to="/complete"><button >Realizar Pedido</button> </NavLink>
+            <button type="submit">Realizar Pedido</button>
         </form>
 
 
@@ -53,5 +80,8 @@ const AddOrder=() =>{
 }
     
     
+
+
+
 
 export default AddOrder
