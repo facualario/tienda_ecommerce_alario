@@ -57,3 +57,11 @@ input, textarea, select, button {
      -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
           box-sizing: border-box;
 }
+
+.Eliminar{
+  background-color: #ff6961;
+}
+
+.Finalizar{
+  background-color: greenyellow;
+}

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from "./components/NavBar"
 import ItemListContainer from './components/ItemListContainer';
@@ -7,7 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import CartContextProvider from './context/CartContext'
 import Cart from './components/Cart';
 import AddOrder from './components/AddOrder';
-import CompleteMessage from './components/CompleteMessage';
+
 
 
 
@@ -31,7 +30,7 @@ function App() {
             <Route path="/cart" element={<Cart/>}/>
 
             <Route path="/order" element={<AddOrder/>}/>
-            <Route path="/complete" element={<CompleteMessage/>}/>
+            
             
           </Routes>
           </div>  

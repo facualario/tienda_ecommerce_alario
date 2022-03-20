@@ -43,6 +43,7 @@ const CartContextProvider = ({ children }) => {
         setCart(cart.filter((producto) => producto.id !==id))
     };
 
+   
 
     return ( <CartContext.Provider value={{ cart, addToCart, vaciarCarrito, deleteItem}}>
         {children}
